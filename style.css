@@ -10,6 +10,7 @@
     /* https://lospec.com/palette-list/1bit-monitor-glow */
     --colour-1: #222323;
     --colour-2: #f0f6f0;
+    --clour-accent: #5b8c85;
 }
 
 /* this swaps the colour order to account for user's OS dark mode */
@@ -19,6 +20,7 @@
     :root{
         --colour-1: #f0f6f0;
         --colour-2: #222323;
+        --color-accent:#8fc9c1;
     }
 }
 
@@ -34,10 +36,32 @@ body {
     gap: 1rem;
 }
 
+a {
+    text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--clour-accent);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--clour-accent);
+    outline-offset: 3px;
+}
+
 header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
     margin-block-end: 3rem;
+}
+
+header h2 {
+    font-weight: 400;
+    opacity: 0.75;
 }
 
 .mainNavContainer {
@@ -53,12 +77,43 @@ nav {
     min-width: fit-content;
     flex: 1;
     align-items: flex-end;
+    gap:0.5rem;
+}
+
+nav a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.15s ease;
+}
+nav a:hover, 
+nav a:focus-visible {
+    text-decoration-color: currentColor;
+}
+
+nav a[aria-current="page"] {
+    font-weight: 600;
+    text-decoration-color: currentColor;
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2.5rem;
+    flex: 2;
+    width: 100%;
+    max-width: 80rch;
+}
+
+main section {
+    width: 100%;
+}
+
+main section h3{
+    font-size: 1.35rem;
+    margin-block-end: 0.75rem;
+    border-block-end: 1px solid var(--colour-1);
+    padding-block-end: 0.35rem;
 }
 
 aside {
@@ -128,5 +183,30 @@ footer {
 }
 /* compact breakpoint : phone in portrait */
 @media (width < 600px) {
+
+}
+
+* {
+    boxing-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    text-wrap: balance;
+    max-width: 80rch;
+}
+
+p,li,figcaption {
+    max-width: 80rch;
+}
+
+img,
+picture,
+video { 
+    display: block;
+    max-width: 100%;
 
 }
