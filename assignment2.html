@@ -5,18 +5,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minium-scale=1.0">
     <title>Assignment 2</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .commit-btn {
-            display: inline-block;
-            padding: 0.5em 1em;
-            border: 2px solid currentColor;
-            border-radius: 4px;
-            font: inherit;
-            text-decoration: none;
-            color: inherit;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -35,9 +23,10 @@
             for each. I built two ideas side by side for each which let me compare what kinds of different 
             approaches i could take towards the same idea, rather than commiting to my first solution etc stright away
             this process let me think about this in detail on how this could work. Each prototype below links to the 
-            live version and it's full commit history and explanations. 
+            live version and it's full commit history and explanation. 
         </p>
 
+        <!--idea 1-->
         <h3>Idea 1: Spacial Awareness using sound</h3>
         <p> 
         This idea explores whether the position on a screen can be understood by sound alone. 
@@ -45,6 +34,7 @@
         a pitch and note changes tell them where they are in the space. 
         </p>
 
+        <!--prototype 1 the dot-->
         <h4><a href="https://s4165729.github.io/prototypesA2/">Prototype 1: Dot sound prototype</a></h4>
         <p>
             Press start then move you mouse over the field moving left and right steps through 
@@ -52,43 +42,130 @@
             sound map of the box so the position of the pointer can be heard. 
         </p>
         <p>
-            <a class="commit-btn" href="https://github.com/s4165729/prototypeA2/commits/main">View all commits</a>
+
+        <details>
+            <summary>Commit Logs</summary>
+            <table>
+                <tr>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Body</th>
+                </tr>
+            </table>
+        </details>
+
+        <!--prototype 2 the beacon-->
+        <h4><a href="https://s4165729.github.io/prototypesA2.2/">Prototype 2: beacon prototype</a></h4>
+        <p>
+            This prototype keeps the same idea, position become sound but turns it into a search rather than a readout, 
+            instead of alwys hearing exactly where you are, a target is hidden somewhere in the box, 
+            and you have to find it, the note will rise and the ping speeds up the closer the user gets to it, panning tells you which direction
+            to move and a short chord confirms when you land on it, i think this changes the feel of the itneraction more than i expected, the 
+            dot prototype is about claritiy, always knowing your position while the beacon is about search and uncertainty making it more engaging, 
+            especially for the audience of todlers who may not know where to go which goes with the use of exploration, this feels more closer to to how 
+            an instrument might reward exploration rather than just displaying infromation, moving forward this rasises a question about scale, how would this 
+            hold up with more than one hidden target at once, or across a much larger, scrollable box finding a point becomes a longer more deliberate search, 
+            and would this work with my intended audience 
         </p>
 
-        <h4><a href="#">Prototype 2: (dot sound prototype)</a></h4>
+        <details>
+            <summary>Commit Logs</summary>
+            <table>
+                <tr>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Body</th>
+                    </tr>
+                    <tr><tr> colspan="4"></td></tr>
+            </table>
+        </details>
+    
+        <!--prototype 3-->
+        <h4><a href="#">Prototype 3 drag prototype</a></h4>
         <p>
-            <!--////-->
-        </p>
-
-        <h3>Idea 2: </h3>
-        <p>
-            <!--///-->
-        </p>
-
-        <h4><a href="#">Prototype 1: /// </a></h4>
-        <p>descriptionnnn</p>
-        <p><a class="commit-btn" href="#">View all commits</a></p>
-
-        <h4><a href="#">Prototype 2: /// </a></h4>
-        <p>descriptionnnn</p>
-        <p><a class="commit-btn" href="#">View all commits</a></p>
-
-        <h3>Idea 3: //</h3>
-        <p>
-            intro to idea- explore and why 
+            this one ...
         </p>
         
-        <h4><a href="#">Prototype 1: /// </a></h4>
-        <p>descriptionnnn</p>
-        <p><a class="commit-btn" href="#">View all commits</a></p>
+        <details>
+            <summary>Commit Logs</summary>
+            <table>
+                <tr>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Body</th>
+                </tr>
+                <tr><tr> colspan="4"></tr></tr>
+            </table>
+        </details>
 
-        <h4><a href="#">Prototype 2: /// </a></h4>
-        <p>descriptionnnn</p>
-        <p><a class="commit-btn" href="#">View all commits</a></p>
+        <!--idea 2-->
+        <h3>Idea 2 : Controls</h3>
+        <p>
+            This idea looks at how a note actually will get triggered, since for 
+            an instrument that choice changes what you can play not just how it feels, each version will use the same
+            set of notes and the same layout of clouds, only the interaction for starting and stopping a sound being 
+            different 
+        </p>
 
-        <footer>
-             by: <a href="https://github.com/s4165729">Akira Lordsmith</a>
-        </footer>
+        <h4><a href="#">Prototype 1: toggle controls</a></h4>
+        <p>
+            Tap a cloud to stat...
+        </p>
+
+        <details>
+            <summary>Commit Logs</summary>
+            <table>
+                <tr>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Body</th>
+                </tr>
+                <tr><tr> colspan="4"></tr></tr>
+            </table>
+        </details>
+
+        <h4><a href="#">Prototype 2: hold controls</a></h4>
+        <p>
+            Press and hold a cloud 
+        </p>
+
+         <details>
+            <summary>Commit Logs</summary>
+            <table>
+                <tr>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Body</th>
+                </tr>
+                <tr><tr> colspan="4"></tr></tr>
+            </table>
+        </details>
+
+        <h4><a href="#">Prototype 3: glide controls</a></h4>
+        <p>
+            press down...
+        </p>
+
+        <details>
+            <summary>Commit Logs</summary>
+            <table>
+                <tr>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Body</th>
+                </tr>
+                <tr><tr> colspan="4"></tr></tr>
+            </table>
+        </details>
+
     </main>
-</body>
-</html>
+    <footer>
+        by: <a href="https://github.com/s4165729">Akira Lordsmith</a>
+    </footer>
+    </body>
+    </html>
