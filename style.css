@@ -148,6 +148,38 @@ footer {
     margin-block-start: var(--prose-flow, 1em);
 }
 
+h2.idea-title {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--clour-accent);
+    margin-top: 2.6em;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid var(--border);
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--colour-accent);
+    border-radius: 10px;
+    padding: 1.3em 1.5em;
+    margin: 1em 0 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* breakpoints from Material Design Spec https://m3.material.io/foundations/layout/breakpoints/overview */
 /* while sometimes mobile first is recommended, as we will be focused on desktop, we will start there */
 
@@ -221,5 +253,4 @@ picture,
 video { 
     display: block;
     max-width: 100%;
-
 }
