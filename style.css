@@ -167,18 +167,39 @@ h2.idea-title {
 }
 
 
+.card h3.proto-title {
+    font-weight: 600;
+    margin: 0 0 0.5em;
+}
+.card h3.proto-title a {
+    color: var(--clour-accent);
+}
 
+details {
+    margin-top: 1em;
+    border-top: 1px dashed var(--border);
+    padding-top: 0.8em;
+}
 
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    opacity: 0.75;
+}
+summary:hover { opacity: 1;}
 
-
-
-
-
-
-
-
-
-
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.7em;
+    font-size: 0.9em;
+}
+th, td {
+    text-align: left;
+    padding: 0.4em 0.5em;
+    border-bottom: 1px solid var(--border);
+}
+th { colour: var(--colour-accent); font-weight: 700; }
 
 /* breakpoints from Material Design Spec https://m3.material.io/foundations/layout/breakpoints/overview */
 /* while sometimes mobile first is recommended, as we will be focused on desktop, we will start there */
