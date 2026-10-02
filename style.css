@@ -28,29 +28,41 @@
     }
 }
 
+* {
+    box-sizing: border-box; /*box sizing */
+}
+
 body {
     background-color: var(--colour-1);
     color: var(--colour-2);
     font-family: 'Work Sans', sans-serif;
     line-height: 1.5;
     padding: 1rem;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
 }
 
 /* headings get the serif body text stays sans*/
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fraunces', serif;
+    text-wrap: balance;
+    max-width: 80rch;
+    margin-inline: auto;
 }
 
+
 a {
+    color: var(--clour-accent);
     text-underline-offset: 0.15em;
 }
 
 a:hover,
 a:focus-visible {
-    color: var(--clour-accent);
+    color: var(--colour-2);
 }
 
 a:focus-visible {
@@ -71,6 +83,15 @@ header h1 {
     font-weight: 700;
 }
 
+header h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+header h1 a:hover,
+header h1 a:focus-visible {
+    color:var(--colour-accent);
+}
+
 header h2 {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
@@ -78,19 +99,21 @@ header h2 {
 }
 
 .mainNavContainer {
-    flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
     gap: 1rem;
 }
 
 nav {
     display: flex;
-    flex-direction: column;
-    min-width: fit-content;
-    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-end;
-    gap:0.5rem;
+    gap:0.5rem 1.5rem;
 }
 
 nav a {
@@ -112,26 +135,44 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
-    flex: 2;
+    gap: 0.6rem;
+
     width: 100%;
     max-width: 80rch;
+    margin-inline: auto;
 }
 
 main section {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
 }
 
-main section h3{
+main h2, 
+main h3, 
+main section h3 {
+    margin-block-start: 2.75rem;
+    margin-block-end: 0;
+}
+
+main > :first-child {
+    margin-block-start: 0;
+}
+
+main section h3 {
     font-size: 1.35rem;
-    margin-block-end: 0.75rem;
     border-block-end: 1px solid var(--border);
     padding-block-end: 0.35rem;
 }
 
+main p {
+    margin: 0;
+}
+
 aside {
-    visibility: hidden;
-    flex: 1;
+    display: none;
 }
 
 footer {
@@ -145,14 +186,15 @@ footer {
 /*longer post about how this works and the * + * selector*/
 /*https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/*/
 .prose > * + * {
-    margin-block-start: var(--prose-flow, 1em);
+    margin-block-start: var(--prose-flow, 0.6em);
 }
 
 h2.idea-title {
     font-size: 1.6em;
     font-weight: 700;
     color: var(--clour-accent);
-    margin-top: 2.6em;
+    margin-top: 2.75em;
+    margin-bottom: 0;
     padding-bottom: 0.4em;
     border-bottom: 2px solid var(--border);
 }
@@ -164,21 +206,61 @@ h2.idea-title {
     border-radius: 10px;
     padding: 1.3em 1.5em;
     margin: 1em 0 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6em;
 }
-
 
 .card h3.proto-title {
     font-weight: 600;
-    margin: 0 0 0.5em;
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
 .card h3.proto-title a {
     color: var(--clour-accent);
 }
 
-details {
+.preview {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 36rem;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    container-type: inline-size;
+}
+
+.preview iframe {
+    width: 1280px;
+    height: 800px;
+    border: 0;
+    transform-origin: top left;
+    transform: scale(calc(100cqw / 1280px));
+    pointer-events: none;
+}
+
+.preview a.preview-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.preview:hover, 
+.preview:focus-within{
+    border-color: var(--colour-accent);
+}
+
+details{
     margin-top: 1em;
     border-top: 1px dashed var(--border);
     padding-top: 0.8em;
+    width: 100%;
 }
 
 summary {
@@ -186,7 +268,7 @@ summary {
     font-weight: 600;
     opacity: 0.75;
 }
-summary:hover { opacity: 1;}
+summary:hover { opacity: 1; }
 
 table {
     width: 100%;
@@ -195,11 +277,13 @@ table {
     font-size: 0.9em;
 }
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 0.4em 0.5em;
     border-bottom: 1px solid var(--border);
 }
-th { colour: var(--colour-accent); font-weight: 700; }
+
+th{ color: var(--colour-accent); font-weight: 700;}
+
 
 /* breakpoints from Material Design Spec https://m3.material.io/foundations/layout/breakpoints/overview */
 /* while sometimes mobile first is recommended, as we will be focused on desktop, we will start there */
@@ -225,48 +309,19 @@ th { colour: var(--colour-accent); font-weight: 700; }
     header {
         margin-block-end: 1rem;
     }
-    .mainNavContainer {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    nav {
-        flex: 0;
-        width: 100%;
-        max-width: 80rch;
-        justify-content: space-between;
-        flex-direction: row;
-    }
-    main {
-        flex: 1;
-    }
-    aside {
-        flex: 0;
-    }
     footer {
         margin-block-start: 1rem;
     }
 }
+
 /* compact breakpoint : phone in portrait */
 @media (width < 600px) {
 
 }
 
-* {
-    boxing-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-}
-
-h1,h2,h3,h4,h5,h6 {
-    text-wrap: balance;
-    max-width: 80rch;
-}
-
 p,li,figcaption {
     max-width: 80rch;
+    margin-inline: auto;
 }
 
 img,
@@ -274,4 +329,5 @@ picture,
 video { 
     display: block;
     max-width: 100%;
+    margin-inline: auto;
 }
