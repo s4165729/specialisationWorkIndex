@@ -10,7 +10,7 @@
     /* https://lospec.com/palette-list/1bit-monitor-glow */
     --colour-1: #13293d;
     --colour-2: #eef4fa;
-    --clour-accent: #6fa8dc;
+    --colour-accent: #6fa8dc;
     --card-bg: #1c3a52;
     --border: #29506f;
 }
@@ -22,7 +22,7 @@
     :root{
     --colour-1: #13293d;
     --colour-2: #eef4fa;
-    --clour-accent: #6fa8dc;
+    --colour-accent: #6fa8dc;
     --card-bg: #1c3a52;
     --border: #29506f;
     }
